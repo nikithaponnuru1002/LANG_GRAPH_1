@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Software Team</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Software Team</h1>
+            <p>Enter your problem and let AI generate a complete project plan</p>
+        </header>
+
+        <div class="input-section">
+            <textarea 
+                id="problemInput" 
+                placeholder="Describe your problem statement here... (e.g., Build an e-commerce website with user authentication)"
+                rows="4"
+            ></textarea>
+            <button id="generateBtn" onclick="generatePlan()">
+                Generate Plan
+            </button>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>AI Team is working on your plan...</p>
+        </div>
+
+        <div id="results" class="results hidden">
+            <div class="card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <span>Project Plan</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="card-content">
+                    <pre id="projectPlan"></pre>
+                    <button class="copy-btn" onclick="event.stopPropagation(); copySection('projectPlan')">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <span>Requirements</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="card-content">
+                    <pre id="requirements"></pre>
+                    <button class="copy-btn" onclick="event.stopPropagation(); copySection('requirements')">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <span>Architecture</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="card-content">
+                    <pre id="architecture"></pre>
+                    <button class="copy-btn" onclick="event.stopPropagation(); copySection('architecture')">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <span>Development</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="card-content">
+                    <pre id="development"></pre>
+                    <button class="copy-btn" onclick="event.stopPropagation(); copySection('development')">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <span>Review</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="card-content">
+                    <pre id="review"></pre>
+                    <button class="copy-btn" onclick="event.stopPropagation(); copySection('review')">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <span>Documentation</span>
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="card-content">
+                    <pre id="documentation"></pre>
+                    <button class="copy-btn" onclick="event.stopPropagation(); copySection('documentation')">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
